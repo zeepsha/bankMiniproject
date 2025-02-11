@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let saldo = 1000;
+    let angkaRahasia = Math.floor(Math.random() * 100) + 1; // Angka acak 1-100
+    
+    function menu () {
+        while (true) {
+            let pilihan = prompt(
+                "Selamat datang di ATM!\n" +
+                "1. Cek Saldo\n" +
+                "2. Tarik Tunai\n" +
+                "3. Setor Tunai\n" +
+                "4. Keluar\n" +
+                "5. judi cuy\n" +
+                "6. nguli duit \n"+
+                "Masukkan pilihan (1-4, 5 jangan):"); 
+            
+
+    if (pilihan == 4) {
+        alert("thankuouuuuu");
+        break;
+     }else if (pilihan == 2) {
+      tarik ()  
+     }else if (pilihan == 3) {
+      setor()  
+     }else if (pilihan == 1){
+        alert(`Saldo Anda sekarang adalah ${saldo}`);
+     }else if (pilihan == 5){
+    judiEuy()
+     }else if (pilihan == 6){
+        mulung ()
+     }
+}
+
+    }
+function tarik (){
+    let jumlahTarik = parseInt(prompt("Masukkan jumlah uang yang ingin Anda tarik:"));
+    if(jumlahTarik> saldo){alert(`ga cukup babi nih saldo lu ${saldo}`)}
+        else {saldo -= jumlahTarik; 
+           alert (`jumlah yang telah anda tarik, ${jumlahTarik}, sado anda ${saldo}` );}
+}     
+
+function setor(){
+    let setorTunai = parseInt(prompt("Masukkan jumlah uang yang ingin Anda setor:"));
+    if (setorTunai < 0) {
+        alert(`jumlah yang telah anda setor tunai minus egok`);
+}else {
+    saldo += setorTunai;
+    alert(`mantap rajin menabung buat bank nambah kaya ${setorTunai}`)
+}
+
+}
+function judiEuy(){
+    let judi = parseInt(prompt("Masukkan angka acak 1 - 100 judi:"));
+    if (judi == angkaRahasia){
+        saldo += 100000
+        alert (`ingat ini hanya game mini iseng jangan judol yah adik - adik, anda menang cih 100000${saldo}`)
+    }else{
+        saldo -= 1000
+        alert (`mampus kalah - 1000, sisa saldo anda ${saldo}`)
+    }}
+
+function mulung() {
+    let num1 = Math.floor(Math.random() * 10) + 2; 
+    let num2 = Math.floor(Math.random() * 10) + 1;
+    let correctAnswer = num1 * num2;
+    let userAnswer = prompt(`Berapakah ${num1} x ${num2}?`);
+    if (parseInt(userAnswer) === correctAnswer) {
+        saldo += 1000; alert("Jawaban benar! ✅, dapet duit 1000");
+    } else {
+        alert(`Jawaban salah ❌. Yang benar adalah ${correctAnswer}.`);
+    }
+}
+
+
+menu ();
+
+</script>
+</html>
